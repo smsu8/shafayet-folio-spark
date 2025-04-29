@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Link } from "react-router-dom";
 
 const Navigation: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -13,16 +14,18 @@ const Navigation: React.FC = () => {
       const scrollPosition = window.scrollY;
       setIsScrolled(scrollPosition > 10);
       
-      // Update active section based on scroll position
-      const sections = ["home", "about", "skills", "projects", "education", "certificates", "contact"];
-      
-      for (const section of sections.reverse()) {
-        const element = document.getElementById(section);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          if (rect.top <= 100) {
-            setActiveSection(section);
-            break;
+      // Update active section based on scroll position on home page
+      if (window.location.pathname === "/") {
+        const sections = ["home", "about", "skills", "education", "certificates", "contact"];
+        
+        for (const section of sections.reverse()) {
+          const element = document.getElementById(section);
+          if (element) {
+            const rect = element.getBoundingClientRect();
+            if (rect.top <= 100) {
+              setActiveSection(section);
+              break;
+            }
           }
         }
       }
@@ -33,21 +36,18 @@ const Navigation: React.FC = () => {
   }, []);
 
   const navItems = [
-    { id: "home", label: "Home" },
-    { id: "about", label: "About" },
-    { id: "skills", label: "Skills" },
-    { id: "projects", label: "Projects" },
-    { id: "education", label: "Education" },
-    { id: "certificates", label: "Certificates" },
-    { id: "contact", label: "Contact" },
+    { id: "/", label: "Home" },
+    { id: "/projects", label: "Projects" },
+    { id: "/contact", label: "Contact" },
   ];
 
-  const scrollToSection = (id: string) => {
+  const handleNavClick = (path: string) => {
     setMobileMenuOpen(false);
-    const element = document.getElementById(id);
-    if (element) {
+    
+    // If on home page and clicking home link, scroll to top
+    if (window.location.pathname === "/" && path === "/") {
       window.scrollTo({
-        top: element.offsetTop - 80,
+        top: 0,
         behavior: "smooth",
       });
     }
@@ -63,23 +63,25 @@ const Navigation: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0 font-bold text-xl tracking-tight">
-            <a href="#home" className="text-primary">Shafayet<span className="text-accent">.</span></a>
+            <Link to="/" className="text-primary">Shafayet<span className="text-accent">.</span></Link>
           </div>
           
           {/* Desktop Navigation */}
           <nav className="hidden md:block">
-            <ul className="flex space-x-1">
+            <ul className="flex space-x-6">
               {navItems.map((item) => (
                 <li key={item.id}>
-                  <button
-                    onClick={() => scrollToSection(item.id)}
+                  <Link
+                    to={item.id}
+                    onClick={() => handleNavClick(item.id)}
                     className={cn(
                       "nav-link",
-                      activeSection === item.id && "active"
+                      (window.location.pathname === item.id || 
+                       (window.location.pathname === "/" && item.id === "/")) && "active"
                     )}
                   >
                     {item.label}
-                  </button>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -105,18 +107,20 @@ const Navigation: React.FC = () => {
       <div className={`md:hidden ${mobileMenuOpen ? "block" : "hidden"}`}>
         <div className="px-2 pt-2 pb-3 space-y-1 bg-background/95 backdrop-blur-sm shadow-md">
           {navItems.map((item) => (
-            <button
+            <Link
               key={item.id}
-              onClick={() => scrollToSection(item.id)}
+              to={item.id}
+              onClick={() => handleNavClick(item.id)}
               className={cn(
                 "block px-3 py-2 rounded-md text-base font-medium w-full text-left",
-                activeSection === item.id
+                (window.location.pathname === item.id || 
+                 (window.location.pathname === "/" && item.id === "/")) 
                   ? "text-accent font-semibold"
                   : "text-foreground hover:bg-muted"
               )}
             >
               {item.label}
-            </button>
+            </Link>
           ))}
         </div>
       </div>

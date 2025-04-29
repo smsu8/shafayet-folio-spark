@@ -126,7 +126,7 @@
   @apply fixed bottom-8 right-8 bg-accent text-white p-2 rounded-full shadow-lg z-50 opacity-0 invisible transition-all duration-300 cursor-pointer hover:bg-opacity-90;
 }
 
-/* Fix for circular dependency - using direct CSS instead of @apply for visibility */
+/* Fix for circular dependency - using direct CSS instead of @apply */
 .scroll-to-top.visible {
   opacity: 1;
   visibility: visible;
