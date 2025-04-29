@@ -19,7 +19,7 @@ const Skills: React.FC = () => {
     },
     {
       title: "Tools",
-      items: ["Git", "GitHub", "Firebase"]
+      items: ["Git", "GitHub", "Firebase" , "Supabase"]
     },
     {
       title: "Others",
