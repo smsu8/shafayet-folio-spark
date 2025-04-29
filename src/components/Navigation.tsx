@@ -14,7 +14,7 @@ const Navigation: React.FC = () => {
       setIsScrolled(scrollPosition > 10);
       
       // Update active section based on scroll position
-      const sections = ["home", "about", "skills", "projects", "education", "contact"];
+      const sections = ["home", "about", "skills", "projects", "education", "certificates", "contact"];
       
       for (const section of sections.reverse()) {
         const element = document.getElementById(section);
@@ -38,6 +38,7 @@ const Navigation: React.FC = () => {
     { id: "skills", label: "Skills" },
     { id: "projects", label: "Projects" },
     { id: "education", label: "Education" },
+    { id: "certificates", label: "Certificates" },
     { id: "contact", label: "Contact" },
   ];
 

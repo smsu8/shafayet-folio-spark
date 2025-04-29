@@ -28,14 +28,6 @@ const Education: React.FC = () => {
       location: "Germany",
       description: "Preparatory course for international students focusing on mathematics, physics, and computer science to prepare for university studies in Germany.",
       icon: "graduation"
-    },
-    {
-      institution: "Udemy",
-      degree: "Various Technical Courses",
-      period: "2018 - Present",
-      location: "Online",
-      description: "Completed multiple courses in web development, mobile app development with Flutter, and database administration to supplement formal education.",
-      icon: "graduation"
     }
   ];
 
