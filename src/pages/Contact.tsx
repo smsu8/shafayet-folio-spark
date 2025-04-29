@@ -102,7 +102,7 @@ const Contact: React.FC = () => {
         
         const map = new window.google.maps.Map(mapElement, mapOptions);
         
-        const marker = new window.google.maps.Marker({
+        new window.google.maps.Marker({
           position: { lat: 50.5841, lng: 8.6784 },
           map: map,
           title: "Technische Hochschule Mittelhessen"
