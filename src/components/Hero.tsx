@@ -2,6 +2,7 @@
 import React from "react";
 import { ArrowDown } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Link } from "react-router-dom";
 
 const Hero: React.FC = () => {
   const scrollToNextSection = () => {
@@ -32,8 +33,8 @@ const Hero: React.FC = () => {
             Passionate about creating meaningful solutions through code.
           </p>
           <div className="space-x-4">
-            <a 
-              href="#projects" 
+            <Link 
+              to="/projects" 
               className={cn(
                 "inline-flex items-center px-6 py-3 border border-transparent",
                 "rounded-md shadow-sm text-base font-medium text-white bg-primary",
@@ -41,9 +42,9 @@ const Hero: React.FC = () => {
               )}
             >
               View Projects
-            </a>
-            <a 
-              href="#contact" 
+            </Link>
+            <Link
+              to="/contact" 
               className={cn(
                 "inline-flex items-center px-6 py-3 border border-primary",
                 "rounded-md text-base font-medium text-primary",
@@ -51,7 +52,7 @@ const Hero: React.FC = () => {
               )}
             >
               Contact Me
-            </a>
+            </Link>
           </div>
         </div>
         
