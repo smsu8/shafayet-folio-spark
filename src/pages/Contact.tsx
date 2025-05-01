@@ -156,7 +156,7 @@ const Contact: React.FC = () => {
                     </div>
                     <div>
                       <h3 className="text-lg font-medium">Phone</h3>
-                      <p className="text-muted-foreground">+49 123 456 7890</p>
+                      <p className="text-muted-foreground">+49 178 886 4657</p>
                     </div>
                   </div>
                   
@@ -167,10 +167,10 @@ const Contact: React.FC = () => {
                     <div>
                       <h3 className="text-lg font-medium">Email</h3>
                       <a 
-                        href="mailto:contact@shafayet.com" 
+                        href="mailto:sheikhshafayet@gmail.com" 
                         className="text-muted-foreground hover:text-primary transition-colors"
                       >
-                        contact@shafayet.com
+                        sheikhshafayet@gmail.com
                       </a>
                     </div>
                   </div>
