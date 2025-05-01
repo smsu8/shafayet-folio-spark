@@ -64,7 +64,7 @@ const Projects: React.FC = () => {
     },
     {
       title: "PostgreSQL Database System",
-      description: "Designed and implemented a comprehensive database system for managing university course data and student information.",
+      description: "Designed and implemented a robust and scalable database system to efficiently manage university course data and student records. The system supports functionalities such as course enrollment, student performance tracking, and instructor assignments, ensuring data integrity and consistency across various operations. Applied advanced SQL queries and normalization techniques to optimize performance and reduce redundancy. Leveraged PostgreSQL for its powerful relational capabilities and reliability in handling complex data relationships. The solution significantly improved data accessibility and administrative efficiency for academic departments and student services.",
       image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&h=350",
       technologies: ["PostgreSQL", "SQL", "Database Design"],
       category: "academic",
