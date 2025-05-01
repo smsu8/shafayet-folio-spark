@@ -18,6 +18,22 @@ const Certificates: React.FC = () => {
     title: "Introduction to Cybersecurity",
     issuer: "Cisco Networking Academy",
     icon: "shield"
+  },{
+    title: "Basic cybersecurity knowledge",
+    issuer: "Microsoft and LinkedIn",
+    icon: "shield"
+  },{
+    title: "React Basic Course",
+    issuer: "LinkedIn",
+    icon: "shield"
+  },{
+    title: "Bootstrap 5: A first Look",
+    issuer: "LinkedIn",
+    icon: "shield"
+  },{
+    title: "Git Basic Course",
+    issuer: "LinkedIn",
+    icon: "shield"
   }];
   return <section id="certificates" className="py-20 bg-background">
       <div className="section-container">
