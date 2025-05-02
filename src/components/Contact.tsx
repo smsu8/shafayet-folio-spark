@@ -132,8 +132,8 @@ const Contact: React.FC = () => {
                   <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center mr-4">
                     <Mail className="h-5 w-5 text-primary" />
                   </div>
-                  <a href="mailto:contact@shafayet.com" className="text-muted-foreground hover:text-primary transition-colors">
-                    contact@shafayet.com
+                  <a href="mailto:sheikhshafayet@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">
+                    sheikhshafayet@gmail.com
                   </a>
                 </div>
               </div>

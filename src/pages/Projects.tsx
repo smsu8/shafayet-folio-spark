@@ -210,7 +210,7 @@ const Projects: React.FC = () => {
               </div>
               <div>
                 <p className="text-sm text-muted-foreground">Phone</p>
-                <p className="font-medium">+49 123 456 7890</p>
+                <p className="font-medium">+49 178 886 4657</p>
               </div>
             </div>
             
@@ -220,8 +220,8 @@ const Projects: React.FC = () => {
               </div>
               <div>
                 <p className="text-sm text-muted-foreground">Email</p>
-                <a href="mailto:contact@shafayet.com" className="font-medium hover:text-primary transition-colors">
-                  contact@shafayet.com
+                <a href="mailto:sheikhshafayet@gmail.com" className="font-medium hover:text-primary transition-colors">
+                  sheikhshafayet@gmail.com
                 </a>
               </div>
             </div>
