@@ -33,7 +33,7 @@ const Contact: React.FC = () => {
     }, 1500);
   };
 
-  // Initialize Google Map
+  // Initialize Googlemaps
   useEffect(() => {
     const initMap = () => {
       const mapElement = document.getElementById("google-map");
