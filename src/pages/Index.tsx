@@ -20,7 +20,7 @@ const Index: React.FC = () => {
       <Education />
       <Certificates />
       
-      {/* Contact Info Section */}
+      {/* Contact Info */}
       <section className="py-12 bg-muted">
         <div className="max-w-5xl mx-auto px-4">
           <h2 className="text-2xl font-bold mb-8 text-center">Get In Touch</h2>
