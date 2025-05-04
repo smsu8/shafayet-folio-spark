@@ -25,7 +25,7 @@ const Contact: React.FC = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
+    // Simulate form
     setTimeout(() => {
       setIsSubmitting(false);
       setSubmitMessage("Thanks for your message! This is a placeholder form - in a real implementation, this would be connected to Formspree or a similar service.");
