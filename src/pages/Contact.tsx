@@ -5,6 +5,9 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 
+const WEB3FORMS_ACCESS_KEY = "62d58ecb-bac5-4a70-9530-4f6de6643143";
+
+
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -21,17 +24,38 @@ const Contact: React.FC = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form
-    setTimeout(() => {
+    setSubmitMessage("");
+  
+    const formDataToSend = new FormData();
+    formDataToSend.append("access_key", WEB3FORMS_ACCESS_KEY);
+    formDataToSend.append("name", formData.name);
+    formDataToSend.append("email", formData.email);
+    formDataToSend.append("message", formData.message);
+  
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formDataToSend,
+      });
+  
+      const result = await response.json();
+  
+      if (result.success) {
+        setSubmitMessage("✅ Nachricht erfolgreich gesendet!");
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        setSubmitMessage("❌ Fehler: Nachricht konnte nicht gesendet werden.");
+      }
+    } catch (error) {
+      setSubmitMessage("❌ Netzwerkfehler beim Senden.");
+    } finally {
       setIsSubmitting(false);
-      setSubmitMessage("Thanks for your message! This is a placeholder form - in a real implementation, this would be connected to Formspree or a similar service.");
-      setFormData({ name: "", email: "", message: "" });
-    }, 1500);
+    }
   };
+  
 
   // Initialize Googlemaps
   useEffect(() => {
