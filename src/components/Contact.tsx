@@ -2,6 +2,9 @@
 import React, { useState } from "react";
 import { Mail, Github, Linkedin } from "lucide-react";
 
+const WEB3FORMS_ACCESS_KEY = "62d58ecb-bac5-4a70-9530-4f6de6643143";
+
+
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -18,32 +21,38 @@ const Contact: React.FC = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setIsSubmitting(true);
+   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+      e.preventDefault();
+      setIsSubmitting(true);
+      setSubmitMessage("");
     
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitMessage("Thanks for your message! This is a placeholder form - in a real implementation, this would be connected to Formspree or a similar service.");
-      setFormData({ name: "", email: "", message: "" });
-    }, 1500);
+      const formDataToSend = new FormData();
+      formDataToSend.append("access_key", WEB3FORMS_ACCESS_KEY);
+      formDataToSend.append("name", formData.name);
+      formDataToSend.append("email", formData.email);
+      formDataToSend.append("message", formData.message);
     
-    // In a real implementation, you would add Formspree integration here
-    // const formAction = "https://formspree.io/your-form-id";
-    // fetch(formAction, {
-    //   method: 'POST',
-    //   headers: { 'Content-Type': 'application/json' },
-    //   body: JSON.stringify(formData),
-    // }).then(() => {
-    //   setSubmitMessage("Message sent successfully!");
-    //   setFormData({ name: "", email: "", message: "" });
-    // }).catch(() => {
-    //   setSubmitMessage("There was an error sending your message. Please try again.");
-    // }).finally(() => {
-    //   setIsSubmitting(false);
-    // });
-  };
+      try {
+        const response = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          body: formDataToSend,
+        });
+    
+        const result = await response.json();
+    
+        if (result.success) {
+          setSubmitMessage("✅ Nachricht erfolgreich gesendet!");
+          setFormData({ name: "", email: "", message: "" });
+        } else {
+          setSubmitMessage("❌ Fehler: Nachricht konnte nicht gesendet werden.");
+        }
+      } catch (error) {
+        setSubmitMessage("❌ Netzwerkfehler beim Senden.");
+      } finally {
+        setIsSubmitting(false);
+      }
+    };
+    
 
   return (
     <section id="contact" className="py-20 bg-background">
