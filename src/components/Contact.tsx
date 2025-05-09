@@ -41,13 +41,13 @@ const Contact: React.FC = () => {
         const result = await response.json();
     
         if (result.success) {
-          setSubmitMessage("✅ Nachricht erfolgreich gesendet!");
+          setSubmitMessage("Nachricht erfolgreich gesendet!");
           setFormData({ name: "", email: "", message: "" });
         } else {
-          setSubmitMessage("❌ Fehler: Nachricht konnte nicht gesendet werden.");
+          setSubmitMessage("Fehler: Nachricht konnte nicht gesendet werden.");
         }
       } catch (error) {
-        setSubmitMessage("❌ Netzwerkfehler beim Senden.");
+        setSubmitMessage("Netzwerkfehler beim Senden.");
       } finally {
         setIsSubmitting(false);
       }
