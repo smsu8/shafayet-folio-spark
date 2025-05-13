@@ -24,7 +24,7 @@ const Projects: React.FC = () => {
     {
       title: "Frag.jetzt",
       description: "Open-source tool from THM; worked on UI customization, i18n, and Git workflows. Enhanced the user experience and contributed to internationalization efforts.",
-      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=600&h=350",
+      image: "src/lib/fragjetzt.png",
       technologies: ["Angular", "TypeScript", "i18n", "Git"],
       githubUrl: "#",
       category: "academic",
@@ -32,7 +32,7 @@ const Projects: React.FC = () => {
     {
       title: "Scrumptious Cooking App",
       description: "Built with Flutter & Firebase, featuring real-time data synchronization. Served as team lead (Product Owner), managing backlog and coordinating development efforts.",
-      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=600&h=350",
+      image: "src/lib/scrumptious.png",
       technologies: ["Flutter", "Firebase", "Dart", "Scrum"],
       githubUrl: "#",
       liveUrl: "#",
@@ -41,7 +41,7 @@ const Projects: React.FC = () => {
     {
       title: "Compiler construction – language processor & code generation",
       description: "Implementation of a simple compiler using scanner and parser generators. All phases of a compiler were mapped out – from lexical and syntactic analysis and semantic checking to code generation for a stack machine and a simple RISC architecture. The focus was on the practical application of theoretical concepts such as automata, grammars, and compiler architecture.",
-      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=600&h=350",
+      image: "src/lib/c_shell2.png",
       technologies: ["Java", "Code Generation", "Compiler Construction", "Syntax analysis"],
       githubUrl: "#",
       category: "academic",
@@ -49,7 +49,7 @@ const Projects: React.FC = () => {
     {
       title: "Achievement Collector – Academic Achievement Tracker",
       description: "A cross-platform app for managing and analyzing academic performance. Students can view and share their grade overviews and access statistics. Instructors can create new modules, add, or edit grades. The app offers features such as automatic calculation of grade point averages, credit points remaining until graduation, and other performance statistics.",
-      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=600&h=350",
+      image: "src/lib/leistung.png",
       technologies: ["Supabase", "Flutter", "Flutter", "Dart"],
       githubUrl: "#",
       category: "academic",
@@ -57,7 +57,7 @@ const Projects: React.FC = () => {
     {
       title: "Ninja Virtual Machine (C-based VM)",
       description: "Development of a virtual machine in C for a simple object-oriented language. The goal of the project was to implement system-level concepts such as memory management, bytecode interpretation, and low-level abstractions in a practical way. The VM supports elementary language constructs, control structures, and method calls. This project provided in-depth insights into compiler construction, programming language execution, and the implementation of higher abstractions at a lower system level. Highlights: Implementation of custom bytecode and interpreter Memory management on the heap/stack Use of system-level development tools (GCC, GDB) In-depth understanding of CPU-level processes, register handling, and runtime behavior",
-      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=600&h=350",
+      image: "src/lib/ninja_vm2.png",
       technologies: ["C", "Virtual machines", "System-level Development", "GDB debugging" ,"Git"],
       githubUrl: "#",
       category: "academic",
@@ -75,6 +75,15 @@ const Projects: React.FC = () => {
       image: "https://images.unsplash.com/photo-1483058712412-4245e9b90334?auto=format&fit=crop&w=600&h=350",
       technologies: ["PHP", "JavaScript", "Security"],
       githubUrl: "#",
+      category: "personal",
+    },
+    {
+      title: "News App",
+      description: "Designed and developed a responsive portfolio website using modern web technologie.",
+      image: "src/lib/newsapp.png",
+      technologies: ["React", "TypeScript", "Tailwind CSS"],
+      githubUrl: "#",
+      liveUrl: "#",
       category: "personal",
     },
     {

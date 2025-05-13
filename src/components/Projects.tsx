@@ -36,6 +36,14 @@ const Projects: React.FC = () => {
       technologies: ["PostgreSQL", "SQL", "Database Design"],
     },
     {
+      title: "News App",
+      description: "Designed and developed a responsive portfolio website using modern web technologies.",
+      image: "src/lib/newsapp.png",
+      technologies: ["React", "TypeScript", "Tailwind CSS"],
+      githubUrl: "#",
+      liveUrl: "#",
+    },
+    {
       title: "Web Security Analysis Tool",
       description: "Developed a tool for analyzing web applications for common security vulnerabilities and providing remediation suggestions.",
       image: "https://images.unsplash.com/photo-1483058712412-4245e9b90334?auto=format&fit=crop&w=600&h=350",
