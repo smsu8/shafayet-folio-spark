@@ -59,7 +59,7 @@ const Hero: React.FC = () => {
         <div className="md:w-1/2 flex justify-center animate-fade-in" style={{animationDelay: "0.2s"}}>
           <div className="w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 bg-muted rounded-full overflow-hidden border-4 border-white shadow-lg">
             <img 
-              src="src/lib/smallsize.jpeg" 
+              src="public/images/smallsize.jpeg" 
               alt="Shafayet" 
               className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
             />
