@@ -19,15 +19,12 @@ const Projects: React.FC = () => {
       description: "Open-source tool from THM; worked on UI customization, i18n, and Git workflows. Enhanced the user experience and contributed to internationalization efforts.",
       image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=600&h=350",
       technologies: ["Angular", "TypeScript", "i18n", "Git"],
-      githubUrl: "#",
     },
     {
       title: "Scrumptious Cooking App",
       description: "Built with Flutter & Firebase, featuring real-time data synchronization. Served as team lead (Product Owner), managing backlog and coordinating development efforts.",
       image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=600&h=350",
       technologies: ["Flutter", "Firebase", "Dart", "Scrum"],
-      githubUrl: "#",
-      liveUrl: "#",
     },
     {
       title: "PostgreSQL Database System",
@@ -40,15 +37,14 @@ const Projects: React.FC = () => {
       description: "Designed and developed a responsive portfolio website using modern web technologies.",
       image: "src/lib/newsapp.png",
       technologies: ["React", "TypeScript", "Tailwind CSS"],
-      githubUrl: "#",
-      liveUrl: "#",
+     
     },
     {
       title: "Web Security Analysis Tool",
       description: "Developed a tool for analyzing web applications for common security vulnerabilities and providing remediation suggestions.",
       image: "https://images.unsplash.com/photo-1483058712412-4245e9b90334?auto=format&fit=crop&w=600&h=350",
       technologies: ["PHP", "JavaScript", "Security"],
-      githubUrl: "#",
+      
     }
   ];
 
